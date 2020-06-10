@@ -1,12 +1,11 @@
 <script>
-import moment from 'moment.js'
-
+import moment from './moment.js'
 export default{
     data(){
         return{
-         today: moment(),
-         dateContext: moment(),
-         days: ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+        today: moment(),
+        dateContext: moment(),
+        days: ['S', 'M', 'T', 'W', 'T', 'F', 'S']
         }
     },
     computed: {
@@ -21,7 +20,7 @@ export default{
         },
     
         daysInMonth: function () {
-              var t = this;
+            var t = this;
             return t.dateContext.daysInMonth();
         },
     
@@ -56,20 +55,17 @@ export default{
                 var t = this;
                 t.dateContext = moment(t.dateContext).add(1, 'month');
             },
-        
             subtractMonth: function () {
                 var t = this;
                 t.dateContext = moment(t.dateContext).subtract(1, 'month');
             }
         },
     }
-
 }
 </script>
-
 <template>
-    <div class="calendar">
-        <div class="calendar-header">
+    <div class="Calendar">
+        <div class="Calendar-header">
             <i class="fa fa-fw fa-chevron-left" @click="subtractMonth"></i>
             <h4>{{month + ' - ' + year}}</h4>
             <i class="fa fa-fw fa-chevron-right" @click="addMonth"></i>
@@ -80,9 +76,9 @@ export default{
         <ul class="dates">
             <li v-for="blank in firstDayOfMonth" :key="blank">&nbsp;</li>
             <li v-for="date in daysInMonth" 
-        		:class="{'current-day': date == initialDate &amp;&amp; month == initialMonth && year == initialYear}" :key="date" >;
+        :class="{'current-day': date == initialDate &amp;&amp; month == initialMonth && year == initialYear}" :key= "date">;
                 <span></span>
-           </li>
+            </li>
         </ul>
     </div>
 </template>
