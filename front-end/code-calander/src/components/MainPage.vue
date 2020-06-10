@@ -1,19 +1,25 @@
 <template>
+
   <!-- everything goes inside of these divs -->
   <div class="giant-container" style="border: 1px solid red; height: 100vh;">
+
       <h1>Hello Welcome to CodeCalendar.com!</h1>
+      <img src="../media/code_calanderV1.png" width="40%"/>
       <p>All of our stuff should go between these template tags surrounding this code</p>
       <p>Styles for everything on this page can be added below in the style tag</p>
       <p>inside of the script below is where we can add variables and lifecycle hooks</p>
+      <vue-cal style="height: 250px" />
   </div> 
 </template>
 
 <script>
+
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
 }
 </script>
 
