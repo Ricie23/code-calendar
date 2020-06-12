@@ -1,11 +1,14 @@
 <template>
   <!-- everything goes inside of these divs -->
   <div class="giant-container" style="border: 1px solid red; height: 100vh;">
-    <h1>Hello Welcome to CodeCalendar.com!</h1>
-    <img src="../media/code_calanderV1.png" width="40%" @click="foobar"/>
-    <p>All of our stuff should go between these template tags surrounding this code</p>
+    <div class="menu">
+      <img src="../media/code_calanderV1.png" width="20%" style="float: left; margin:30px; margin-top:0px; "/>
+      <ul>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div >
     <p>Styles for everything on this page can be added below in the style tag</p>
-    <p>inside of the script below is where we can add variables and lifecycle hooks</p>
   </div>  
 </template>
 <script>
@@ -32,5 +35,13 @@ h1{
 }
 .giant-container{
   text-align: center;
+}
+.menu li{
+  display: inline; 
+  text-decoration: none;
+margin:30px;
+}
+.menu{
+  margin-top: 30px;
 }
 </style>
